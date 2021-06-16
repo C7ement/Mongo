@@ -1,0 +1,5 @@
+mongo-back/docker-compose.override.yml
+mongo-back/backups
+*/node_modules
+frontend/dist
+/.idea

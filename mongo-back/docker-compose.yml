@@ -1,0 +1,39 @@
+version: '3.6'
+services:
+
+  backend:
+    build: .
+    depends_on:
+      - mongo
+      - mongo-express
+    ports:
+      - "3000:3000"
+    command: npm run dev
+    volumes:
+      - ./server:/usr/src/app
+      - /usr/src/app/node_modules/
+    environment:
+      DATABASE_URL:
+      NODE_ENV: development
+      PORT: 3000
+      VUE_APP_API_URL: http://localhost:3000/api
+
+  mongo:
+    image: mongo
+    ports:
+      - 27017:27017
+    restart: always
+    volumes:
+      - mongodata:/data/db
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+
+
+volumes:
+  mongodata:
+  pgdata:
+  node_modules:

@@ -1,0 +1,38 @@
+html {text-align: left;}
+.flex{display: flex;}
+.align-middle {display: flex;align-items: center;}
+.flex-column {display: flex;flex-direction: column;}
+.space-between {justify-content: space-between;}
+
+
+
+button, input[type=submit] {
+  border: 1px solid transparent;
+  box-shadow: none;
+  height: 1.5rem;
+  border-radius: 2px;
+  margin: 0 5px;
+  background-color: transparent;
+}
+
+
+button.send, button.cancel, input[type=submit].send, input[type=submit].cancel {
+  &:hover{
+    color: white;
+  }
+}
+button.send, input[type=submit].send {
+  color: cornflowerblue;
+  &:hover{
+    background-color: cornflowerblue;
+  }
+
+}
+button.cancel, input[type=submit].cancel {
+  color: indianred;
+  &:hover{
+    background-color: indianred;
+  }
+}
+
+
